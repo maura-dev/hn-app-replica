@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 
-axios.defaults.baseURL = "http://node-hnapi.herokuapp.com"
+axios.defaults.baseURL = "https://node-hnapi.herokuapp.com"
 ReactDOM.render(
   <React.StrictMode>
     <App />
