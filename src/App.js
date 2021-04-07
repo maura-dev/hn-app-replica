@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import News from './pages/news.js'
+import Login from './pages/login.js'
+import User from './pages/user.js'
+import Header from './components/header.js'
+import Post from './pages/post.js'
+import MobileHeader from './components/mobileHeader.js'
+import NewsPaginated from './pages/newsPaginated.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+  render(){
+    
+    return (
+      <Router basename={process.env.PUBLIC_URL}>
+        <div className="App">  
+            <Header />
+            <MobileHeader />
+            <div className="news-page">
+              <Switch>
+                <Route exact path="/" component={News} />
+                <Route exact path="/news/:no" component={NewsPaginated} />
+                <Route exact path="/user/:user" component={User}/>
+                <Route exact path="/post/:id" component={Post}/>
+                <Route exact path="/login" component={Login} />
+              </Switch>
+            </div>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
