@@ -41,9 +41,9 @@ export default class NewsPaginated extends Component {
 		const { postDetails, isLoading } = this.state
 		return(
 			<React.Fragment>
-				<div className="top-note">
+				{/*<div className="top-note">
 					<p><i className="fas fa-user-plus"></i>&nbsp; &nbsp;Not registered yet? Signup and enjoy amazing hacker news features <Link to="/signup">here</Link> </p>
-				</div>
+				</div>*/}
 
 				{isLoading ?  
 					(<i className="fa fa-spinner fa-spin" 
